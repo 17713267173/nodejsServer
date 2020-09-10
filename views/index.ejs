@@ -48,5 +48,14 @@
 	</div>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			url: '/news',
+			type: 'GET',
+			success: function(res){
+				console.log(res)
+			}
+		})
+	</script>
   </body>
 </html>

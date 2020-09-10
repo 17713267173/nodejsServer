@@ -12,11 +12,11 @@ module.exports = {
 			});
 		})
 	},
-	showAlbum: function(req,res){
+	showAlbum: function(req,res,next){
 		var albumName = req.params.albumName;
 		file.getAllImagesByAlbumName(albumName,function(err,imagesArr){
 			if(err){
-				res.send(err);
+				next();
 				return;
 			}
 			res.render('album',{
