@@ -9,9 +9,13 @@ app.set('view engine','ejs');
 // 例如：public下有一个文件admin.html,你单独app.get('/admin',function(req,res){res.send('admin')}),浏览器会直接访问public下的admin.html，不会运行你的app.get('/admin');
 // app.use('/static',express.static("./public"));  
 app.use(express.static("./public"));
+app.use(express.static("./uploads"));
 
-app.get('/',router.showIndex);
+app.get('/',router.showIndex);  //这里不用写成router.showIndex()
 app.get('/:albumName',router.showAlbum);
 
+app.use(function(req,res){
+	res.render('err');
+})
 app.listen(3000);
 

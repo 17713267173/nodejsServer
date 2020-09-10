@@ -28,20 +28,23 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">全部相册 <span class="sr-only">(current)</span></a></li>
+            <li><a href="/">全部相册 <span class="sr-only">(current)</span></a></li>
             <li><a href="#">上传</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="#">全部相册</a></li>
+		  <li><a href="#"><%= albumName %></a></li>
+		</ol>
 		<div class="row">
-			<% for(var i = 0;i < allAlbum.length;i++){ %>
+			<% for(var i = 0; i < images.length; i++){ %>
 				<div class="col-xs-6 col-md-3">
-					<a href="/<%= allAlbum[i] %>" class="thumbnail">
-						<img src="/images/timg.png" alt="img">
+					<a href="#" class="thumbnail">
+						<img src="<%= images[i] %>" alt="img">
 					</a>
-					<h4><%= allAlbum[i] %></h4>
 				</div>
 			<% } %>
 		</div>
